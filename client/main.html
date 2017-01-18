@@ -1,0 +1,16 @@
+<head>
+  <title>blaze-sort-issue</title>
+</head>
+
+<body>
+  <button type="button">Add document</button>
+
+  <div class="documents">
+    {{#each docs}}
+      <div class="document" data-id="{{this._id}}" data-name="{{this.name}}">
+        <div class="remove">x</div>
+        <span class="order">{{this.order}}</span> {{this.name}}
+      </div>
+    {{/each}}
+  </div>
+</body>
