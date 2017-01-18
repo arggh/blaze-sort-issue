@@ -49,7 +49,11 @@ Template.body.events({
     const docId = event.currentTarget.parentElement.dataset.id;
     Meteor.call('remove', docId);
   },
-  'click button'(event, instance) {
+  'click button.insert'(event, instance) {
     Meteor.call('insert');
   },
+  'click button.magicMove'(event, instance) {
+    docIdToMove = Documents.findOne({ order: 1 })._id;
+    Meteor.call('moveTo', docIdToMove, 0);
+  }
 });
